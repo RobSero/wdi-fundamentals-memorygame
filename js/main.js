@@ -2,22 +2,27 @@
 let cards = ['king', 'king', 'queen', 'queen'];
 let cardsInPlay = [];
 
-let cardOne = cards[0];
-cardsInPlay.push(cardOne);
+function checkForMatch(){
+ 
+        if (cardsInPlay[0] === cardsInPlay[1]){
+            alert('matched congratulations!')
+        }
+        else {
+            alert('Unlucky but nope!')
+        }
+    }
+  
 
+function flipCard(cardId){
 
-
-let cardTwo = cards[1];
-cardsInPlay.push(cardTwo);
-
-console.log('User flipped ' + cardOne);
-console.log('User flipped ' + cardTwo);
+    console.log('User flipped over ' + cards[cardId]);
+cardsInPlay.push(cards[cardId]);
 
 if (cardsInPlay.length === 2) {
-    if (cardsInPlay[0] === cardsInPlay[1]){
-        alert('matched congratulations!')
-    }
-    else {
-        alert('Unlucky but nope!')
-    }
+    checkForMatch();
 }
+}
+
+flipCard(2);
+flipCard(0);
+
