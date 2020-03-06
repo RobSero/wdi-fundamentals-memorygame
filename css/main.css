@@ -28,6 +28,10 @@ body {
         border-color: white;
     }
 
+    nav #reset-button {
+        display: none;
+    }
+
 
     main {
         width: 850px;
@@ -61,7 +65,13 @@ body {
         color: #0D2C40;
         font-weight: 600;
         font-size: 20px;
+        display: block;
     }
+
+    main .hidden {
+        display: none;
+    }
+
 
     footer {
         text-transform: uppercase;
@@ -87,7 +97,13 @@ body {
         color: #F15B31;
     }
 
-    
+    .card:hover {
+        box-shadow: rgb(224, 61, 216) 0px 0px 30px;
+    }
+
+    .card {
+        transition: all 0.5s;
+    }
 
     .clearfix:after {
         visibility: hidden;
