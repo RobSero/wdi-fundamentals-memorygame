@@ -1,4 +1,7 @@
 
+// ---------------------- CARD OBJECT ARRAY ----------------------
+
+
 let cards = [{
     rank: 'queen',
     suit: 'hearts',
@@ -20,9 +23,19 @@ let cards = [{
     cardImage: 'images/king-of-diamonds.png'
 }
 ];
+
+// ---------------------- GAME SETUP ON PAGE LOAD  ----------------------
+
+
 let cardsInPlay = [];
 let currentScore = 0;
-randomArrayIndex = [];
+let randomArrayIndex = [];
+let resetButton = document.querySelector('#reset-button');
+let instructions = document.querySelector('p');
+let howToPlayButton = document.querySelector('#how-to-play');
+
+// ---------------------- CHECK FOR MATCHES FUNCTION ----------------------
+
 
 function checkForMatch(){
  
@@ -42,6 +55,8 @@ function checkForMatch(){
         }
     }
   
+// ---------------------- FLIP CARD FUNCTION ON CARD CLICK ----------------------
+
 
   function flipCard(){
 
@@ -57,6 +72,9 @@ if (cardsInPlay.length === 2) {
 }
 }
 
+// ---------------------- CREATE NEW BOARD FUNCTION ----------------------
+
+
 function createBoard(){
     randomIndex();
     for(let i = 0; i < cards.length; i++){
@@ -69,11 +87,15 @@ function createBoard(){
     }
 }
 
+// ---------------------- INITIAL CREATE BOARD ON PAGE LOAD ----------------------
+
+
 createBoard();
 
-let resetButton = document.querySelector('#reset-button');
-let instructions = document.querySelector('p');
-let howToPlayButton = document.querySelector('#how-to-play');
+
+
+// ---------------------- SHOWS AND HIDES INSTRUCTIONS SECTION  ----------------------
+
 
 howToPlayButton.addEventListener('click', function(){
     if(instructions.getAttribute('class') === 'hidden'){
@@ -84,8 +106,10 @@ howToPlayButton.addEventListener('click', function(){
     }
 });
 
-resetButton.addEventListener('click', resetGame);
 
+// ---------------------- RESETS THE GAME WHEN RESET BUTTON IS PRESSED  ----------------------
+
+resetButton.addEventListener('click', resetGame);
 
 function resetGame(){
     resetButton.setAttribute('id','reset-button');
@@ -99,7 +123,7 @@ function resetGame(){
 }
 
 
-
+// ---------------------- GENERATES A RANDOM ARRAY OF INDEX NUMBERS FOR THE CARD ORDER  ----------------------
 
 function randomIndex(){
   while (randomArrayIndex.length < 4){
